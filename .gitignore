@@ -6,3 +6,4 @@ react-loadable.json
 docs/*
 src/app/old
 .env
+**/__snapshots/*

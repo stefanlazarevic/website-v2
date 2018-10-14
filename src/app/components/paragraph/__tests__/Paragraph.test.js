@@ -1,22 +1,22 @@
 import React from 'react';
 import Paragraph from '../Paragraph';
-import { shallow, mount } from 'enzyme';
-import { light } from '../../../Theme';
+import { shallowWithLightTheme } from '../../../tests/shallow';
+import { mountWithLightTheme } from '../../../tests/mount';
 
 describe('Paragraph component', () => {
   it('Render paragraph element.', () => {
-    const paragraph = shallow(<Paragraph />);
+    const paragraph = shallowWithLightTheme(<Paragraph />);
     expect(paragraph).toMatchSnapshot();
   });
 
   it('Render text inside paragraph,', () => {
-    const paragraph = mount(<Paragraph theme={light}>Hello World</Paragraph>);
+    const paragraph = mountWithLightTheme(<Paragraph>Hello World</Paragraph>);
     expect(paragraph.text()).toEqual('Hello World');
   });
 
-  it('Render child components inside paragraph.', () => {
-    const paragraph = mount(
-      <Paragraph theme={light}>
+  it('Render text inside paragraph with child components.', () => {
+    const paragraph = mountWithLightTheme(
+      <Paragraph>
         This text is <strong>bold.</strong>
       </Paragraph>
     );
