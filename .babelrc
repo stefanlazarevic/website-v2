@@ -15,6 +15,7 @@
   ],
   "plugins": [
     "styled-components",
-    "react-loadable/babel"
+    "react-loadable/babel",
+    "react-hot-loader/babel"
   ]
 }

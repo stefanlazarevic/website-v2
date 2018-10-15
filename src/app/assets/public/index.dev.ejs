@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/" lang="en" dir="ltr">
+  <head>
+    <!-- General metadata *Common to all pages.-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Recommended favicon format -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 0;
+        text-rendering: optimizeSpeed;
+        font-family: 'Nunito', 'Arial', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+      }
+    </style>
+
+    <!-- Title provided by page component over a Helmet HOC. -->
+    {{TITLE}} {{SEO_CRITICAL_METADATA}} {{CRITICAL_CSS}}
+
+    <!-- Social Media Metadata. [Facebook] -->
+    <meta property="og:type" content="website" />
+    <!-- Social Media Metadata [Twitter] -->
+    <meta name="twitter:card" content="summary" />
+  </head>
+
+  <body>
+    <div id="app">{{APP}}</div>
+    <script>window.REDUX_DATA = {{REDUX_DATA}}</script>
+  </body>
+</html>
