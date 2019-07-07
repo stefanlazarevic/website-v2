@@ -1,64 +1,44 @@
-# fullstack-react-boilerplate
-Boilerplate for quick start using React + Redux + React Router + React Helmet + React Google Analytics + SSR + Code Split + Dynamic Route Imports + Long Term Caching + Sass + CSS Modules + Inline Critical CSS
+# isomorphic-react-boilerplate
 
-My goal with this experimental repository:
+Boilerplate for quick start using 
 
-1. Make building React application much faster and prevent common mistakes.
+- React
+- React Router with Dynamic route import.
+- React Helmet
+- React Google Analytics
+- Redux
+- Styled components
+- Code Splitting
+- Server Side Rendering
+- Long Term Asset Caching
+- Jest
+- Enzyme
+- Webpack
+- Hot Module Replacement
+- Browser Sync
+- Webpack Dashboard
+- Friendly Errors
+- ESLint
+- Prettier
+- Storybook
 
-- Use React with static type checker. (Typescript or **Flow**) ✔
-- Use code linter to keep code maintainable and consistent. (TSLint or **ESLint**) ✔
-- Use .editorconfig so everyone in the team can write code using the same style. ✔
-- Use .env to store all environment variables. ✔
-- Use Nodemon in development environment to watch all server related files. ✔
-- Use Webpack watch and support for Hot Module Replacement. [HMR]
+Under consideration
 
-2. Give users only what they asked for.
+- Typescript
+- TSLint
 
-- Use React Router with dynamic page import. ✔
-- Use page loading component to prevent blank page while loading script chunk. ✔
-- Use React Lazyload to support component load on scroll.
-- Deliver css based on device media.
+## Installation
 
-3. Support Sass for component styling.
+`npm install`
 
-- Use sass loader to compile sass/scss to css. ✔
-- Use autoprefixer to support css from IE9 forwards. ✔
+## Run Unit Tests
 
-4. Application is SEO friendly.
+`npm run test`
 
-- Use Node.js for Server Side Rendering [SSR] ✔
-- Server supports HTTPS.
-- Server supports GZIP compression. ✔
-- Server generate inline critical css style. ✔
-- Use React Helmet to provide page specific metadata. ✔
+## Run Storybook Documentation
 
-5. Deliver optimized resources.
+`npm run storybook`
 
-- Minify css. ✔
-- Minify js. ✔
-- Minify HTML. ✔
-- Support webp image format.
-- Reduce image sizes.
+## Run Development environment
 
-6. Application supports Google Analytics [GA].
-
-- Use React GA for Google Analytics support. ✔
-
-7. Application supports offline mode.
-
-8. Application supports global state management.
-
-- Use Redux for global state management. ✔
-
-9. Application supports Unit Tests.
-
-- Use Jest as unit testing library.
-- Use code coverages.
-- Support Travis CI for continuous integration.
-
-10. Application uses long term cache for assets.
-
-- Long term cache js ✔
-- Long term cache css ✔
-- Long term cache fonts
-- Long term cache images
+`npm start`
