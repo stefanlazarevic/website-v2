@@ -96,6 +96,7 @@
   },
   "dependencies": {
     "@devlazarevic/react-collapse": "0.0.3",
+    "@devlazarevic/react-drawer": "0.0.1",
     "@storybook/addon-options": "^4.0.4",
     "react": "16.8.6",
     "react-dom": "16.8.6",

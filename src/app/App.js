@@ -2,13 +2,15 @@ import { hot } from 'react-hot-loader/root';
 import React, { Fragment } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppRouter from '@routes/Router';
-import { Reboot } from '@components';
-import { DarkTheme } from '@design';
+import { Reboot, Drawer } from '@components';
+import { LightTheme } from '@design';
 
 const AppRoot = () => (
-  <ThemeProvider theme={DarkTheme}>
+  <ThemeProvider theme={LightTheme}>
     <Fragment>
       <Reboot />
+
+      <Drawer />
       <AppRouter />
     </Fragment>
   </ThemeProvider>
