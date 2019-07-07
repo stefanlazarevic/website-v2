@@ -1,7 +1,6 @@
-import Typography from '../Typography';
 import { LightSwatch, DarkSwatch } from '../Color';
 
-export const LightTheme = Object.assign({}, LightSwatch, Typography);
-export const DarkTheme = Object.assign({}, DarkSwatch, Typography);
+export const LightTheme = Object.assign({}, LightSwatch);
+export const DarkTheme = Object.assign({}, DarkSwatch);
 
 export default LightTheme;

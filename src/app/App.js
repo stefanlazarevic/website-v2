@@ -3,15 +3,15 @@ import React, { Fragment } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppRouter from '@routes/Router';
 import { Reboot } from '@components';
-import { LightTheme } from '@design';
+import { DarkTheme } from '@design';
 
 const AppRoot = () => (
-  <Fragment>
-    <Reboot />
-    <ThemeProvider theme={LightTheme}>
+  <ThemeProvider theme={DarkTheme}>
+    <Fragment>
+      <Reboot />
       <AppRouter />
-    </ThemeProvider>
-  </Fragment>
+    </Fragment>
+  </ThemeProvider>
 );
 
 export default hot(AppRoot);

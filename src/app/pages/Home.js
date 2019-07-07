@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
-import { Link } from 'react-router-dom';
-import { Typography } from '@components';
+import { Container, Typography } from '@components';
 
 class Home extends Component {
   static propTypes = {};
@@ -10,10 +9,12 @@ class Home extends Component {
 
   injectPageMetadata = () => (
     <Helmet>
-      <title>Home Page</title>
+      <title>
+        Stefan Lazarevic - Fullstack Developer and Javascript Engeneer
+      </title>
       <meta
         name="description"
-        content="Description of the page less than 150 characters"
+        content="Stefan Lazarevic, an experienced web developer specialized in web technologies and Javascript programming language."
       />
     </Helmet>
   );
@@ -25,13 +26,21 @@ class Home extends Component {
   render = () => (
     <Fragment>
       {this.injectPageMetadata()}
-      <div style={{ textAlign: 'center' }}>
-        <img src="static/img/landing-react-logo.png" alt="React Logo" />
-        <Typography component="h1">Home Page</Typography>
-        <Link to="/about">About</Link>
-        <br />
-        <Link to="/components">Not Found</Link>
-      </div>
+      <Container>
+        <Typography component="h1">
+          Passionate <br /> Web Developer
+        </Typography>
+        <Typography>
+          Hello! My name is Stefan Lazarević. Welcome to my website! I am a web
+          developer based in Belgrade, Serbia. I help organizations develop
+          custom web-based software, as well as build beautiful marketing and
+          portfolio websites. I&#39;m currently full-time employed as web
+          developer at <a href="#">Scopic Software</a>. During the last two
+          years I&#39;ve been working on various project to polish my skills in
+          web development on both frontend and backend. My favourite language is
+          JavaScript but I also love to develop in PHP.
+        </Typography>
+      </Container>
     </Fragment>
   );
 }
