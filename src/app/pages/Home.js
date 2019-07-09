@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
-import { Container, Typography } from '@components';
+import { Container, Header, Page, Typography } from '@components';
 
 class Home extends Component {
   static propTypes = {};
@@ -24,7 +24,11 @@ class Home extends Component {
   }
 
   render = () => (
-    <Fragment>
+    <Page>
+      <Header>
+        <Typography component="small">Home</Typography> /{' '}
+        <Typography component="small">About</Typography>
+      </Header>
       {this.injectPageMetadata()}
       <Container>
         <Typography component="h1">
@@ -41,7 +45,7 @@ class Home extends Component {
           JavaScript but I also love to develop in PHP.
         </Typography>
       </Container>
-    </Fragment>
+    </Page>
   );
 }
 

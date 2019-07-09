@@ -15,6 +15,9 @@ export const DarkSwatch = {
   info: '#0a84ff',
   danger: '#ff453a',
   warning: '#ffd60a',
+
+  primary: '#8268ff',
+  secondary: '#009bec',
 };
 
 export const LightSwatch = {
@@ -34,4 +37,7 @@ export const LightSwatch = {
   info: '#007aff',
   danger: '#ff3b30',
   warning: '#ffcc00',
+
+  primary: '#8268ff',
+  secondary: '#009bec',
 };

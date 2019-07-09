@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled, { css, createGlobalStyle } from 'styled-components';
 import Drawer from '@devlazarevic/react-drawer';
 
@@ -14,18 +14,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default styled(({ className, ...props }) => (
-  <Fragment>
+const _Drawer = React.forwardRef((props, ref) => (
+  <React.Fragment>
     <GlobalStyle />
-    <Drawer
-      open={true}
-      overlay={true}
-      trapFocus={true}
-      className={className}
-      {...props}
-    />
-  </Fragment>
-))`
+    <Drawer ref={ref} open={true} overlay={true} trapFocus={true} {...props} />
+  </React.Fragment>
+));
+
+export default styled(_Drawer)`
   position: fixed;
   top: 0;
   left: 0;

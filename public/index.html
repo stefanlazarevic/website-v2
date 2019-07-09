@@ -19,10 +19,11 @@
     <link rel="icon" type="image/x-icon" href="static/img/favicon/favicon.ico" />
     <link rel="icon" type="image/png" href="static/img/favicon/favicon.png" />
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
-
     <link rel="manifest" href="static/manifest.webmanifest" />
 
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="http://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
 
     <!-- Social Media Metadata. [Facebook] -->
     <meta property="og:type" content="website" />
@@ -33,5 +34,16 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <script>
+      (function() {
+        var link = document.createElement('link');
+        var head = document.getElementsByTagName('head')[0];
+        link.href = "https://fonts.googleapis.com/css?family=Nunito:300,400";
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        head.appendChild(link);
+      })();
+    </script>
   </body>
 </html>

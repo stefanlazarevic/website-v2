@@ -8,6 +8,7 @@ module.exports = {
       '@config': path.resolve(__dirname, '../config'),
       '@app': path.resolve(__dirname, '../src/app'),
       '@components': path.resolve(__dirname, '../src/app/components'),
+      '@context': path.resolve(__dirname, '../src/app/context'),
       '@redux': path.resolve(__dirname, '../src/app/redux'),
       '@pages': path.resolve(__dirname, '../src/app/pages'),
       '@routes': path.resolve(__dirname, '../src/app/routes'),
@@ -39,7 +40,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-          }
+          },
         ],
       },
     ],

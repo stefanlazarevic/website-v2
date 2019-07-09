@@ -30,12 +30,17 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
+    padding: 0 0 0 50px;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: ${({ theme }) => theme.background_primary};
+    background-color: ${({ theme }) => theme.background_tertiary};
+
+    @media screen and (min-width: 991px) {
+      padding-left: 80px;
+    }
   }
 
   [tabindex="-1"]:focus {
