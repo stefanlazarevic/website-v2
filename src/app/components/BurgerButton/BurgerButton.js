@@ -1,71 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Checker } from '@components/HOC';
 
-class BurgerButton extends React.PureComponent {
-  static propTypes = {
-    active: PropTypes.bool,
+const BurgerButton = props => {
+  return (
+    <div
+      tabIndex="0"
+      role="button"
+      aria-label="Toggle Navigation"
+      aria-pressed={props.checked}
+      className={props.className}
+      onClick={props.onClick}
+      onKeyDown={props.onKeyDown}
+    >
+      <div className="line" />
+      <div className="line" />
+      <div className="line" />
+    </div>
+  );
+};
 
-    className: PropTypes.string,
+BurgerButton.propTypes = {
+  checked: PropTypes.bool.isRequired,
 
-    afterActive: PropTypes.func,
+  className: PropTypes.string,
 
-    afterDeactive: PropTypes.func,
+  onClick: PropTypes.func,
 
-    onClick: PropTypes.func,
-  };
+  onKeyDown: PropTypes.func,
+};
 
-  static defaultTypes = {
-    active: false,
+BurgerButton.defaultProps = {
+  checked: false,
+};
 
-    className: 'button__burger',
-  };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      active: props.active,
-    };
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevState.active && this.state.active) {
-      if (this.props.afterActive) {
-        this.props.afterActive();
-      }
-    }
-
-    if (prevState.activate && !this.state.active) {
-      if (this.props.afterDeactive) {
-        this.props.afterDeactive();
-      }
-    }
-  }
-
-  render() {
-    const className = `${this.props.className} ${
-      this.props.active ? 'active' : null
-    }`;
-
-    return (
-      <div
-        tabIndex="0"
-        role="button"
-        aria-label="Toggle Navigation"
-        aria-pressed={this.state.active}
-        className={className}
-        onClick={this.props.onClick}
-      >
-        <div className="line" />
-        <div className="line" />
-        <div className="line" />
-      </div>
-    );
-  }
-}
-
-export default styled(BurgerButton)`
+export default Checker(styled(BurgerButton)`
   position: fixed;
   top: 7px;
   left: 5px;
@@ -93,7 +63,7 @@ export default styled(BurgerButton)`
   }
 
   &:active,
-  &.active {
+  &[aria-pressed='true'] {
     transform: rotate(-45deg);
   }
 
@@ -120,11 +90,11 @@ export default styled(BurgerButton)`
     }
   }
 
-  &.active .line:first-child {
+  &[aria-pressed='true'] .line:first-child {
     transform: rotate(-90deg) translateX(1px);
   }
 
-  &.active .line:last-child {
+  &[aria-pressed='true'] .line:last-child {
     transform: rotate(-90deg) translateX(-2px);
   }
-`;
+`);

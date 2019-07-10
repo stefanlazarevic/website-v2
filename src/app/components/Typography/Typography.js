@@ -23,10 +23,16 @@ const Typography = styled(({ component, children, ...props }) =>
     css`
       font-size: 0.75rem;
       line-height: 1.75rem;
+      margin: 1.5rem 0;
 
       ${({ theme }) => css`
         color: ${theme.text_secondary};
       `};
+
+      @media screen and (min-width: 991px) {
+        font-size: 1rem;
+        line-height: 2rem;
+      }
     `};
 `;
 

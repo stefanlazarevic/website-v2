@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
-import { Container, Header, Page, Typography } from '@components';
+import {
+  Button,
+  Checkbox,
+  Column,
+  Container,
+  Header,
+  Page,
+  Row,
+  Typography,
+} from '@components';
 
 class Home extends Component {
-  static propTypes = {};
+  static propTypes = {
+    history: PropTypes.object,
+  };
+
   static defaultProps = {};
 
   injectPageMetadata = () => (
@@ -23,27 +36,49 @@ class Home extends Component {
     ReactGA.pageview('/');
   }
 
+  goToAboutPage = () => {
+    this.props.history.push('/about');
+  };
+
   render = () => (
     <Page>
-      <Header>
-        <Typography component="small">Home</Typography> /{' '}
-        <Typography component="small">About</Typography>
-      </Header>
+      <Header />
       {this.injectPageMetadata()}
       <Container>
-        <Typography component="h1">
-          Passionate <br /> Web Developer
-        </Typography>
-        <Typography>
-          Hello! My name is Stefan Lazarević. Welcome to my website! I am a web
-          developer based in Belgrade, Serbia. I help organizations develop
-          custom web-based software, as well as build beautiful marketing and
-          portfolio websites. I&#39;m currently full-time employed as web
-          developer at <a href="#">Scopic Software</a>. During the last two
-          years I&#39;ve been working on various project to polish my skills in
-          web development on both frontend and backend. My favourite language is
-          JavaScript but I also love to develop in PHP.
-        </Typography>
+        <Row>
+          <Column>
+            <Row>
+              <Column>
+                <Typography component="h1">
+                  Passionate <br /> Web Developer
+                </Typography>
+              </Column>
+            </Row>
+            <Row>
+              <Column>
+                <Typography component="p">
+                  Hello! My name is Stefan Lazarević. Welcome to my website! I
+                  am a web developer based in Belgrade, Serbia. I help
+                  organizations develop custom web-based software, as well as
+                  build beautiful marketing and portfolio websites. I&#39;m
+                  currently full-time employed as web developer at{' '}
+                  <a href="#">Scopic Software</a>. During the last two years
+                  I&#39;ve been working on various project to polish my skills
+                  in web development on both frontend and backend. My favourite
+                  language is JavaScript but I also love to develop in PHP.
+                </Typography>
+              </Column>
+            </Row>
+            <Row>
+              <Column>
+                <Button onClick={this.goToAboutPage}>More about me</Button>
+                <Checkbox id="test">
+                  <Typography component="small">Go Fuck Yourself</Typography>
+                </Checkbox>
+              </Column>
+            </Row>
+          </Column>
+        </Row>
       </Container>
     </Page>
   );

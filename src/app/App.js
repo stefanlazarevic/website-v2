@@ -14,13 +14,14 @@ const AppRoot = () => {
     <ThemeProvider theme={DarkTheme}>
       <React.Fragment>
         <Reboot />
-        <DrawerContextProvider active={false}>
+        <DrawerContextProvider active={true}>
           <DrawerContextConsumer>
             {context => (
               <React.Fragment>
                 <BurgerButton
-                  active={context.active}
-                  onClick={context.toggle}
+                  checked={context.active}
+                  // afterChecked={context.activate}
+                  // afterUnchecked={context.deactivate}
                 />
                 <Drawer
                   open={context.active}
