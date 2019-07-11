@@ -7,6 +7,7 @@ import {
   Column,
   Container,
   Header,
+  Link,
   Page,
   Row,
   Typography,
@@ -61,10 +62,11 @@ class Home extends Component {
                   organizations develop custom web-based software, as well as
                   build beautiful marketing and portfolio websites. I&#39;m
                   currently full-time employed as web developer at{' '}
-                  <a href="#">Scopic Software</a>. During the last two years
-                  I&#39;ve been working on various project to polish my skills
-                  in web development on both frontend and backend. My favourite
-                  language is JavaScript but I also love to develop in PHP.
+                  <Link href="https://scopicsoftware.com">Scopic Software</Link>
+                  . During the last two years I&#39;ve been working on various
+                  project to polish my skills in web development on both
+                  frontend and backend. My favourite language is JavaScript but
+                  I also love to develop in PHP.
                 </Typography>
               </Column>
             </Row>
