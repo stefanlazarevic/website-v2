@@ -20,8 +20,8 @@ const AppRoot = () => {
               <React.Fragment>
                 <BurgerButton
                   checked={context.active}
-                  // afterChecked={context.activate}
-                  // afterUnchecked={context.deactivate}
+                  afterChecked={context.activate}
+                  afterUnchecked={context.deactivate}
                 />
                 <Drawer
                   open={context.active}

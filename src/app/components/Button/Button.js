@@ -36,8 +36,8 @@ export default styled.button`
   }
 
   @media screen and (min-width: 991px) {
-    max-width: 240px;
-    font-size: 1rem;
+    max-width: 220px;
+    font-size: 0.9rem;
     line-height: 1.8rem;
   }
 `;

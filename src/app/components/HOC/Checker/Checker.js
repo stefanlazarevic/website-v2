@@ -36,8 +36,8 @@ export default BaseComponent => {
       }
     };
 
-    static getDeriveredStateFromProps(nextProps, prevState) {
-      if (nextProps.checked !== prevState.checked) {
+    static getDerivedStateFromProps(nextProps, prevState) {
+      if (nextProps.checked !== prevState.prevChecked) {
         return { checked: nextProps.checked, prevChecked: nextProps.checked };
       }
 
@@ -59,7 +59,7 @@ export default BaseComponent => {
         }
       }
 
-      if (prevState.activate && !this.state.checked) {
+      if (prevState.checked && !this.state.checked) {
         if (this.props.afterUnchecked) {
           this.props.afterUnchecked();
         }

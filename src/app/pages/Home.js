@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
 import {
   Button,
-  Checkbox,
   Column,
   Container,
   Header,
@@ -72,9 +71,6 @@ class Home extends Component {
             <Row>
               <Column>
                 <Button onClick={this.goToAboutPage}>More about me</Button>
-                <Checkbox id="test">
-                  <Typography component="small">Go Fuck Yourself</Typography>
-                </Checkbox>
               </Column>
             </Row>
           </Column>

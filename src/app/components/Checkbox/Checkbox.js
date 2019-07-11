@@ -56,8 +56,61 @@ Checkbox.defaultProps = {
   disabled: false,
 };
 
-const StyledCheckbox = styled(Checkbox)`
-  background: red;
-`;
+export default Checker(styled(Checkbox)`
+  input {
+    display: none;
+  }
 
-export default Checker(StyledCheckbox);
+  label {
+    color: ${({ theme }) => theme.text_secondary};
+    cursor: pointer;
+    position: relative;
+    font-size: 1rem;
+    outline: 0;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  label:hover,
+  label:focus {
+    color: ${({ theme }) => theme.text_primary};
+  }
+
+  input + label::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    border: 1px solid ${({ theme }) => theme.border_primary};
+    background-color: ${({ theme }) => theme.background_secondary};
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+
+  input + label:focus::before {
+    border-color: ${({ theme }) => theme.border_focus};
+  }
+
+  input:checked + label::before {
+    background-color: ${({ theme }) => theme.primary};
+    border-color: ${({ theme }) => theme.primary};
+  }
+
+  input:checked + label::after {
+    content: '';
+    display: table;
+    position: absolute;
+    top: 10px;
+    left: 7px;
+    border: 2px solid #ffffff;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    width: 6px;
+    height: 10px;
+  }
+`);
