@@ -6,6 +6,7 @@ import {
   Button,
   Column,
   Container,
+  Footer,
   Header,
   Link,
   Page,
@@ -44,7 +45,7 @@ class Home extends Component {
     <Page>
       <Header />
       {this.injectPageMetadata()}
-      <Container>
+      <Container style={{ flex: 1 }}>
         <Row>
           <Column>
             <Row>
@@ -62,7 +63,9 @@ class Home extends Component {
                   organizations develop custom web-based software, as well as
                   build beautiful marketing and portfolio websites. I&#39;m
                   currently full-time employed as web developer at{' '}
-                  <Link href="https://scopicsoftware.com">Scopic Software</Link>
+                  <Link href="https://scopicsoftware.com" target="_blank">
+                    Scopic Software
+                  </Link>
                   . During the last two years I&#39;ve been working on various
                   project to polish my skills in web development on both
                   frontend and backend. My favourite language is JavaScript but
@@ -72,12 +75,28 @@ class Home extends Component {
             </Row>
             <Row>
               <Column>
-                <Button onClick={this.goToAboutPage}>More about me</Button>
+                <Button
+                  onClick={this.goToAboutPage}
+                  style={{ marginBottom: 40 }}
+                >
+                  More about me
+                </Button>
               </Column>
             </Row>
           </Column>
         </Row>
       </Container>
+      <Footer>
+        <Container fluid={true}>
+          <Row>
+            <Column>
+              <Typography component="small">
+                Copyright @ Stefan Lazarevic 2019
+              </Typography>
+            </Column>
+          </Row>
+        </Container>
+      </Footer>
     </Page>
   );
 }

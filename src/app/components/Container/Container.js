@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -10,22 +10,28 @@ const Container = styled.div`
   margin-right: auto;
   flex-direction: column;
 
-  @media screen and (min-width: 576px) {
-    max-width: 540px;
-  }
+  ${({ fluid }) => {
+    if (!fluid || fluid === false) {
+      return css`
+        @media screen and (min-width: 576px) {
+          max-width: 540px;
+        }
 
-  @media screen and (min-width: 768px) {
-    max-width: 720px;
-  }
+        @media screen and (min-width: 768px) {
+          max-width: 720px;
+        }
 
-  @media screen and (min-width: 992px) {
-    max-width: 960px;
-  }
+        @media screen and (min-width: 992px) {
+          max-width: 960px;
+        }
 
-  @media screen and (min-width: 1200px) {
-    flex-direction: row;
-    max-width: 1140px;
-  }
+        @media screen and (min-width: 1200px) {
+          flex-direction: row;
+          max-width: 1140px;
+        }
+      `;
+    }
+  }};
 `;
 
 Container.propTypes = {

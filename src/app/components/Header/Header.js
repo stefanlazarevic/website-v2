@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 const InnerHeader = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.border_primary};
   padding: 10px 15px;
-  font-size: 0.8rem;
 
   small {
     cursor: pointer;

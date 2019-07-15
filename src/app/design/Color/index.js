@@ -18,6 +18,11 @@ export const DarkSwatch = {
 
   primary: '#8268ff',
   secondary: '#009bec',
+
+  navigation: {
+    hover: '#1b1e24',
+    active_background: '#272933',
+  },
 };
 
 export const LightSwatch = {
@@ -40,4 +45,9 @@ export const LightSwatch = {
 
   primary: '#8268ff',
   secondary: '#009bec',
+
+  navigation: {
+    hover: '#1b1e24',
+    active_background: '#272933',
+  },
 };

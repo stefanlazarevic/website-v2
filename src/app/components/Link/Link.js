@@ -3,14 +3,30 @@ import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 const Link = props => {
-  const { to, href, className, ...rest } = props;
+  const { forwardRef, internal, to, href, className, ...rest } = props;
 
-  if (props.internal) {
-    return <NavLink to={to || href || '#'} className={className} {...rest} />;
+  if (internal) {
+    return (
+      <NavLink
+        innerRef={forwardRef}
+        to={to || href || '#'}
+        className={className}
+        {...rest}
+      />
+    );
   } else {
-    return <a href={to || href || '#'} className={className} {...rest} />;
+    return (
+      <a
+        ref={forwardRef}
+        href={to || href || '#'}
+        className={className}
+        {...rest}
+      />
+    );
   }
 };
+
+Link.displayName = 'Link';
 
 export default styled(Link)`
   font-size: 0.75rem;
@@ -18,8 +34,13 @@ export default styled(Link)`
   margin: 1.5rem 0;
 
   ${({ theme }) => css`
-    color: ${theme.text_secondary};
+    color: ${theme.primary};
   `};
+
+  &:hover,
+  &:focus {
+    color: rgb(64, 169, 243);
+  }
 
   @media screen and (min-width: 991px) {
     font-size: 1rem;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default BaseComponent => {
-  class Checker extends React.Component {
+  class Checker extends React.PureComponent {
     static propTypes = {
       checked: PropTypes.bool.isRequired,
     };
@@ -44,22 +44,24 @@ export default BaseComponent => {
       return null;
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-      if (nextState.checked !== this.state.checked) {
-        return true;
-      }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //   if (nextState.checked !== this.state.checked) {
+    //     return true;
+    //   }
 
-      return false;
-    }
+    //   return false;
+    // }
 
     componentDidUpdate(prevProps, prevState) {
       if (!prevState.checked && this.state.checked) {
+        console.info('Was unchecked now checked');
         if (this.props.afterChecked) {
           this.props.afterChecked();
         }
       }
 
       if (prevState.checked && !this.state.checked) {
+        console.info('Was checked now unchecked');
         if (this.props.afterUnchecked) {
           this.props.afterUnchecked();
         }

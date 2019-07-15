@@ -15,7 +15,7 @@ const CLIENT_DEV_CONFIG = {
   mode: 'development',
   entry: [
     'react-hot-loader/patch',
-    path.resolve(__dirname, '../src/client/client.js')
+    path.resolve(__dirname, '../src/client/client.js'),
   ],
   devtool: 'source-map',
   plugins: [

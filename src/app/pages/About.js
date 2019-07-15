@@ -1,12 +1,12 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
 import { Link, withRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import { Typography } from '@components';
+import { Page, Typography } from '@components';
 
-class About extends Component {
+class About extends React.Component {
   static propTypes = {
     route: PropTypes.object,
   };
@@ -27,14 +27,14 @@ class About extends Component {
   }
 
   render = () => (
-    <Fragment>
+    <Page>
       {this.injectPageMetadata()}
       <Typography component="h1">About Page</Typography>
       <Link to="/">Home</Link>
       <br />
       <Link to="/about/example">Example</Link>
       {renderRoutes(this.props.route.routes)}
-    </Fragment>
+    </Page>
   );
 }
 

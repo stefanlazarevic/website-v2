@@ -95,8 +95,8 @@
     "webpack-node-externals": "1.7.2"
   },
   "dependencies": {
-    "@devlazarevic/react-collapse": "0.0.5",
-    "@devlazarevic/react-drawer": "0.0.2",
+    "@devlazarevic/react-collapse": "0.0.6",
+    "@devlazarevic/react-drawer": "0.0.3",
     "@storybook/addon-options": "^4.0.4",
     "ls-react-grid": "^0.2.0",
     "react": "16.8.6",
