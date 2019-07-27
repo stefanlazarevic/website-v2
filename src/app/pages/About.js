@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
-import { Link, withRouter } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
-import { Page, Typography } from '@components';
+import { withRouter } from 'react-router-dom';
 
 class About extends React.Component {
   static propTypes = {
@@ -26,16 +24,7 @@ class About extends React.Component {
     ReactGA.pageview('/about');
   }
 
-  render = () => (
-    <Page>
-      {this.injectPageMetadata()}
-      <Typography component="h1">About Page</Typography>
-      <Link to="/">Home</Link>
-      <br />
-      <Link to="/about/example">Example</Link>
-      {renderRoutes(this.props.route.routes)}
-    </Page>
-  );
+  render = () => <div>Hello</div>;
 }
 
 export default withRouter(About);

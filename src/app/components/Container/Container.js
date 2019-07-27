@@ -1,17 +1,20 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+const ContainerBase = styled.div`
   display: flex;
   position: relative;
-  width: 100%;
-  padding: 0 15px;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+`;
 
+const ContainerMedia = styled(ContainerBase)`
   ${({ fluid }) => {
-    if (!fluid || fluid === false) {
+    if (!fluid) {
       return css`
         @media screen and (min-width: 576px) {
           max-width: 540px;
@@ -29,17 +32,21 @@ const Container = styled.div`
           flex-direction: row;
           max-width: 1140px;
         }
+
+        @media screen and (min-width: 1600px) {
+          max-width: 1540px;
+        }
       `;
     }
   }};
 `;
 
-Container.propTypes = {
-  fluid: PropTypes.bool,
+ContainerMedia.propTypes = {
+  fluid: PropTypes.bool.isRequired,
 };
 
-Container.defaultProps = {
+ContainerMedia.defaultProps = {
   fluid: false,
 };
 
-export default Container;
+export default ContainerMedia;

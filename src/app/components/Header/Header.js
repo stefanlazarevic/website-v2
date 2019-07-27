@@ -1,40 +1,22 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const InnerHeader = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.border_primary};
-  padding: 10px 15px;
+const Header = props => {
+  return <header className={props.className}>{props.children}</header>;
+};
 
-  small {
-    cursor: pointer;
-  }
-`;
+Header.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
 
-export default styled(props => (
-  <header className={props.className}>
-    <InnerHeader>{props.children}</InnerHeader>
-  </header>
-))`
-  position: fixed;
-  top: 0;
-  left: 52px;
+Header.defaultProps = {};
+
+export default styled(Header)`
+  display: block;
   width: 100%;
-  border-top: 6px solid;
-  z-index: 7;
-
-  ${({ theme }) => {
-    return css`
-      border-image: linear-gradient(
-          to right,
-          ${theme.primary} 0%,
-          ${theme.secondary} 100%
-        )
-        1;
-      background-color: ${theme.background_primary};
-    `;
-  }};
-
-  @media screen and (min-width: 991px) {
-    left: 81px;
-  }
+  background-color: ${({ theme }) => theme.background_primary};
+  padding: 10px 15px;
+  margin-bottom: 30px;
 `;
